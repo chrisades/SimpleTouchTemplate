@@ -6,6 +6,12 @@ The hardware peripheral logic and the rest of this README below was adapted from
 ## CONTROLS
 <img src="touch.jpeg" width="300"/>
 
+All of these get read in the main loop and stored in global variables, so you can use them anywhere (including `AudioCallback`).
+
+- **Touch pads (12):** Read from the MPR121 over I2C and numbered 0 to 11. `OnPadTouch(int pad)` runs when a pad is touched and `OnPadRelease(int pad)` runs when it's let go. Put your code in those, or check `padPressed[]` to see which pads are being held down.
+- **Switches (2):** Two 3-way switches, A (S09/S10) and B (S07/S08). `switchAValue` and `switchBValue` are `2` for left, `0` for center and `1` for right.
+- **Pots (8):** Pots 0 to 7 are on A0 to A7 (S30 to S37), in order. `potValue[]` holds each one as a float from 0 to 1.
+
 ## PREREQUISITES
 - [Daisy Toolchain](https://docs.daisy.audio/tutorials/cpp-dev-env/) (ARM GCC + make)
 - **Windows:** use [Git Bash](https://git-scm.com/downloads) to run the commands below — cmd and PowerShell won't work
