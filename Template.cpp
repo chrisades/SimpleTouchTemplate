@@ -23,6 +23,7 @@ void OnPadRelease(int pad) { (void)pad; }
 
 void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
+    // Add your DSP here
     for(size_t i = 0; i < size; i++)
     {
         out[0][i] = 0.0f;
