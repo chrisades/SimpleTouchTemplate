@@ -2,6 +2,10 @@
 #include "daisysp.h"
 #include "dev/mpr121.h"
 
+const char* USBD_MANUFACTURER_STRING = "Synthux";
+const char* USBD_PRODUCT_STRING_HS = "SimpleTouch";
+const char* USBD_PRODUCT_STRING_FS = "SimpleTouch";
+
 using namespace daisy;
 using namespace seed;
 using namespace daisysp;
